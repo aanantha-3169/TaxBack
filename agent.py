@@ -13,7 +13,6 @@ def get_agent(list_filters,openai_key,pinecone_key):
     from llama_index.agent import OpenAIAgent
     from llama_index.llms import OpenAI
     from llama_index.tools import BaseTool, FunctionTool
-    from IPython.display import Markdown, display
     from agent_utils import get_rebate,get_tax
     from llama_index.tools import QueryEngineTool, ToolMetadata
     from llama_index.llms import ChatMessage
