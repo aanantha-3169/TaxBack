@@ -5,11 +5,11 @@ from agent import get_agent
 from agent_utils import get_query
 import base64
 
-st.set_page_config(page_title="Santa's little gift", page_icon="🎅🏼", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Tax Discounts", page_icon="🎅🏼", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 
 openai.api_key = st.secrets["openai_key"]
-st.title("Discounts! Don't Stop Shopping! 🛍️")
+st.title("Don't Stop Shopping yet! 🛍️")
 
 # Initialize session state
 if 'my_df' not in st.session_state:
