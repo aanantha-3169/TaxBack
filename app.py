@@ -100,7 +100,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 st.session_state.messages.append(message) # Add response to message history
 
             except:
-                generic_bot = get_agent([])
+                generic_bot = get_agent([],st.secrets["openai_key"],st.secrets["pinecone_key"])
                 response = generic_bot.chat(prompt)
                 st.write(response.response)
                 st.info('Create a list of items you would like to buy in the sidebar to have a more details conversation.', icon="ℹ️")
