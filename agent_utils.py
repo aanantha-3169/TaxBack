@@ -104,4 +104,4 @@ def get_tax(income:int) -> int:
 
     final_tax = ((income - lower_range) * tax_rate) + first_rate
 
-    return f"If your income is {income}, your tax would be {int(final_tax)}. You would fall under category {category} which is taxed {first_rate} for the first {lower_range} and {tax_rate} percent on the remaining income"
+    return f"If your income is {income}, your tax would be {int(final_tax)}. You would fall under category {category} which is taxed RM{first_rate} for the first {lower_range} and {tax_rate} percent on the remaining income"
