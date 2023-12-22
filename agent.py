@@ -68,8 +68,8 @@ def get_agent(list_filters,openai_key,pinecone_key):
     #Set a default chat history to handle cases where information is not provided
     str_cat = ','.join(list_filters)
     chat_history = [ChatMessage(role= 'user', content=f"Assume I earn an income of RM90,000. If I state my income chat, update it to the stated income. I want to buy an items in category {str_cat}")]
-
-    agent = OpenAIAgent.from_tools(tools, chat_history = chat_history, verbose=True)
+    system_prompt = "You are a tax advisory agent a you must only use information from the tool to answer queries. Other topics unrelated to personal income tax and does not use on of the tool should not be answered"
+    agent = OpenAIAgent.from_tools(tools,system_prompt = system_prompt, chat_history = chat_history, verbose=True)
     # chat_engine = CondenseQuestionChatEngine.from_defaults(
     #     query_engine=query_engine,
     #     # condense_question_prompt=custom_prompt,
