@@ -81,7 +81,7 @@ with st.sidebar:
             chat_bot = get_agent(distinct_list,st.secrets["openai_key"],st.secrets["pinecone_key"])
             
 # Main Page for Chat
-if prompt := st.chat_input("Ask questions on the tax reliefs you can get form your christmas list"): # Prompt for user input and save to chat history
+if prompt := st.chat_input("Ask your question here"): # Prompt for user input and save to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
 
 for message in st.session_state.messages: # Display the prior chat messages
