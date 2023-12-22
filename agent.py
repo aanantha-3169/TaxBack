@@ -67,7 +67,7 @@ def get_agent(list_filters,openai_key,pinecone_key):
     llm = OpenAI(model="gpt-3.5-turbo-0613")
     #Set a default chat history to handle cases where information is not provided
     str_cat = ','.join(list_filters)
-    chat_history = [ChatMessage(role= 'user', content="Assume I earn an income of RM90,000. If I state my income chat, update it to the stated income. I want to buy an items in category {str_cat}")]
+    chat_history = [ChatMessage(role= 'user', content=f"Assume I earn an income of RM90,000. If I state my income chat, update it to the stated income. I want to buy an items in category {str_cat}")]
 
     agent = OpenAIAgent.from_tools(tools, chat_history = chat_history, verbose=True)
     # chat_engine = CondenseQuestionChatEngine.from_defaults(
